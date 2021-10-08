@@ -17,7 +17,7 @@ class Settings:
     # 跨域白名单
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = ["http://localhost:9528"]
     # db配置
-    DB_URL = "mysql+pymysql://root:123456@1.15.154.8:3306/fast"
+    DB_URL = "mysql+pymysql://root:123456@1.15.154.8:3306/fast?charset=utf8mb4"
     # 启动端口配置
     PORT = 8999
     # 是否热加载

@@ -49,6 +49,8 @@ async def perm_lists(page_no: int, page_size: int, search_perm: str = '', db: Se
     else:
         total = db.query(func.count(Permission.perm_id)).scalar()
         perms = db.query(Permission).slice(page_size * (page_no - 1), page_size * page_no)
+        for perm in perms:
+            print(perm.perm_name)
     perm_list = {"total": total,
                  "perms": [{"perm_id": perm.perm_id, "perm_name": perm.perm_name, "perm_interface": perm.perm_interface}
                            for perm in perms]}

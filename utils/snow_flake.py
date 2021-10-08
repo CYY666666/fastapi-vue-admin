@@ -117,7 +117,7 @@ if __name__ == '__main__':
                 duplicate_id[new_id] = 1
             else:
                 duplicate_id[new_id] += 1
-                raise
+                raise ValueError
             continue
         id_set.append(new_id)
     show_memory_info("end")
