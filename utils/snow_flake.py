@@ -98,8 +98,8 @@ class IdWorker(object):
         return timestamp
 
 
+id_worker = IdWorker(datacenter_id=1, worker_id=1)
 def generate_id():
-    id_worker = IdWorker(datacenter_id=1, worker_id=1)
     return id_worker.get_id()
 
 
