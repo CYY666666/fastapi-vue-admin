@@ -12,8 +12,8 @@ class CMDBType(Base):
     cmdb_type_name = Column(String(100), nullable=False, comment="cmdb类型名")
     cmdb_type_label = Column(String(100), nullable=False, comment="cmdb类型显示名")
     cmdb_type_icon = Column(String(20), comment="显示图标")
-    creat_time = Column(DateTime(), default=datetime.now, comment="创建时间")
-    update_time = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
+    created_at = Column(DateTime(), default=datetime.now, comment="创建时间")
+    updated_at = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
 
     def __repr__(self):
         return f"CMDBType:{self.cmdb_type_name}"
@@ -27,8 +27,8 @@ class CMDBItem(Base):
     item_name = Column(String(20), comment="cmbd类型属性名")
     item_label = Column(String(20), comment="cmdb类型属性label")
     cmdb_type_id = Column(BigInteger, comment="cmdb类型id")
-    creat_time = Column(DateTime(), default=datetime.now, comment="创建时间")
-    update_time = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
+    created_at = Column(DateTime(), default=datetime.now, comment="创建时间")
+    updated_at = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
 
 
 class CMDBRecord(Base):

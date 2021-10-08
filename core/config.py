@@ -17,21 +17,21 @@ class Settings:
     # 跨域白名单
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = ["http://localhost:9528"]
     # db配置
-    DB_URL = "mysql+pymysql://root:123456@127.0.0.1:3306/fast"
+    DB_URL = "mysql+pymysql://root:123456@1.15.154.8:3306/fast"
     # 启动端口配置
     PORT = 8999
     # 是否热加载
     RELOAD = True
     # 上传文件存储位置
-    UPLOAD_FOLDER = "/home/ubuntu/fastapi-vue-admin/upload_files"
+    UPLOAD_FOLDER = "upload_files"
     if not os.path.exists(UPLOAD_FOLDER):
         os.mkdir(UPLOAD_FOLDER)
     # CMDB模板文件存储位置
-    CMDB_FOLDER = "/home/ubuntu/fastapi-vue-admin/cmdb_files"
+    CMDB_FOLDER = "cmdb_files"
     if not os.path.exists(CMDB_FOLDER):
         os.mkdir(CMDB_FOLDER)
     # 日志收集器
-    LOG_FOLDER = "/home/ubuntu/fastapi-vue-admin/fastapi-logs"
+    LOG_FOLDER = "fastapi-logs"
     if not os.path.exists(LOG_FOLDER):
         os.mkdir(LOG_FOLDER)
     t = time.strftime("%Y_%m_%d")

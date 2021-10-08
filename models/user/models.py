@@ -21,8 +21,8 @@ class User(Base):
     email = Column(String(30), unique=True, nullable=False, comment="邮箱")
     hashed_password = Column(String(200), nullable=False, comment="加密后的密码")
     is_active = Column(Boolean(), default=True, comment="是否激活")
-    creat_time = Column(DateTime(), default=datetime.now, comment="创建时间")
-    update_time = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
+    created_at = Column(DateTime(), default=datetime.now, comment="创建时间")
+    updated_at = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
 
     def convert_pass_to_hash(self, password):
         self.hashed_password = pwd_context.hash(password)

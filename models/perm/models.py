@@ -10,8 +10,8 @@ class Permission(Base):
     perm_id = Column(BigInteger, default=generate_id, index=True, primary_key=True, unique=True)
     perm_name = Column(String(50), nullable=False, unique=True, comment="权限名称")
     perm_interface = Column(String(100), nullable=False, unique=True, comment="权限对应的接口")
-    creat_time = Column(DateTime(), default=datetime.now, comment="创建时间")
-    update_time = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
+    created_at = Column(DateTime(), default=datetime.now, comment="创建时间")
+    updated_at = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
 
     def __repr__(self):
         return f"Permission:{self.perm_name}"

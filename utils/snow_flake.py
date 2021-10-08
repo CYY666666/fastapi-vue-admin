@@ -109,7 +109,7 @@ if __name__ == '__main__':
     id_set = []
     duplicate_id = {}
     show_memory_info("start")
-    for i in range(0, 100000):
+    for i in range(0, 1000000):
         print(i)
         new_id = worker.get_id()
         if new_id in id_set:
@@ -117,6 +117,7 @@ if __name__ == '__main__':
                 duplicate_id[new_id] = 1
             else:
                 duplicate_id[new_id] += 1
+                raise
             continue
         id_set.append(new_id)
     show_memory_info("end")

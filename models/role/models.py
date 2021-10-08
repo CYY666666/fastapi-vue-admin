@@ -10,8 +10,8 @@ class Role(Base):
     role_id = Column(BigInteger, primary_key=True, default=generate_id, index=True, unique=True)
     role_name = Column(String(20), nullable=False, unique=True, comment="角色名称")
     role_desc = Column(String(100), comment="描述")
-    creat_time = Column(DateTime(), default=datetime.now, comment="创建时间")
-    update_time = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
+    created_at = Column(DateTime(), default=datetime.now, comment="创建时间")
+    updated_at = Column(DateTime(), default=datetime.now, onupdate=datetime.now, comment="最后一次更新时间")
 
     def __repr__(self):
         return f"Role:{self.role_name}"
